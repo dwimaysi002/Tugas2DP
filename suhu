@@ -1,0 +1,50 @@
+program KonversiSuhu;
+
+var
+  pilihan   : integer;
+  celsius, fahrenheit, kelvin   : real;
+
+begin
+  writeln('Pilih jenis konversi suhu    :');
+  writeln('1. Celsius ke Fahrenheit');
+  writeln('2. Fahrenheit ke Celsius');
+  writeln('3. Celsius ke Kelvin');
+  writeln('4. Kelvin ke Celsius');
+  readln(pilihan);
+
+  if pilihan = 1 then
+  begin
+    writeln('Masukkan suhu dalam Celsius  : ');
+    readln(celsius);
+    fahrenheit := (celsius * 9/5) + 32;
+    writeln('Suhu dalam Fahrenheit: ', fahrenheit:0:2);
+  end
+  
+  else if pilihan = 2 then
+  begin
+    writeln('Masukkan suhu dalam Fahrenheit  : ');
+    readln(fahrenheit);
+    celsius := (fahrenheit - 32) * 5/9;
+    writeln('Suhu dalam Celsius: ', celsius:0:2);
+  end
+  
+  else if pilihan = 3 then
+  begin
+    writeln('Masukkan suhu dalam Celsius  : ');
+    readln(celsius);
+    kelvin := celsius + 273.15;
+    writeln('Suhu dalam Kelvin: ', kelvin:0:2);
+  end
+  
+  else if pilihan = 4 then
+  begin
+    writeln('Masukkan suhu dalam Kelvin  : ');
+    readln(kelvin);
+    celsius := kelvin - 273.15;
+    writeln('Suhu dalam Celsius: ', celsius:0:2);
+  end
+  else
+  begin
+    writeln('Pilihan tidak valid.');
+  end;
+end.
