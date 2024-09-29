@@ -1,0 +1,48 @@
+program kalkulator;
+var
+    pilihan, angka1, angka2 : integer;
+    hasil : real;
+    ulang : char;
+
+begin
+    repeat
+        writeln('kalkulator sederhana');
+        writeln('pilihan operasi    :');
+        writeln('1. penjumlahan');
+        writeln('2. pengurangan');
+        writeln('3. perkalian');
+        writeln('4. pembagian');
+        write('masukkan pilihan ke  :'); readln(pilihan);
+        
+        case pilihan of
+            1: begin 
+                write('masukkan angka pertama   :'); readln(angka1);
+                write('masukkan angka kedua     :'); readln(angka2);
+                hasil := angka1 + angka2;
+                writeln('hasil penjumlahan  :', hasil:0:2);
+            end;
+            2: begin 
+                write('masukkan angka pertama   :'); readln(angka1);
+                write('masukkan angka kedua     :'); readln(angka2);
+                hasil := angka1 - angka2;
+                writeln('hasil pengurangan  :', hasil:0:2);
+            end;
+            3: begin 
+                write('masukkan angka pertama   :'); readln(angka1);
+                write('masukkan angka kedua     :'); readln(angka2);
+                hasil := angka1 * angka2;
+                writeln('hasil perkalian  :', hasil:0:2);
+            end;
+            4: begin 
+                write('masukkan angka pertama   :'); readln(angka1);
+                write('masukkan angka kedua     :'); readln(angka2);
+                hasil := angka1 / angka2;
+                writeln('hasil pembagian  :', hasil:0:2);
+            end;
+          else 
+            writeln('pilihan tidak valid');
+            end;
+            
+            write('ulangi perhitungan? (y/n)    :'); readln(ulang);
+          until ulang <> 'y';
+end.
